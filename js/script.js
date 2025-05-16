@@ -1,5 +1,4 @@
 // Navigation and interactivity script for ArtesaMex single-page application
-
 document.addEventListener('DOMContentLoaded', () => {
     // Product data for modal
     const products = [
@@ -17,22 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1); // Remove #
+            const targetSection = document.getElementById(targetId);
 
-            // Solo manejar enlaces internos con # (no login.html, etc.)
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                // Update active class
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
 
-                if (targetSection) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                    history.pushState(null, null, `#${targetId}`);
-                } else {
-                    console.error(`Section with ID ${targetId} not found`);
-                }
+                // Smooth scroll to section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Update URL without reloading
+                history.pushState(null, null, `#${targetId}`);
+            } else {
+                console.error(`Section with ID ${targetId} not found`);
             }
         });
     });
@@ -45,9 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const category = button.getAttribute('data-category');
 
+            // Update active class
             categoryButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
+            // Filter products
             productItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
                 if (category === 'all' || itemCategory === category) {
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('contactMessage').value.trim();
 
             if (name && email && message) {
+                // Simulate form submission (replace with actual API call in production)
                 alert('Formulario enviado con éxito. Gracias por contactarnos.');
                 contactForm.reset();
             } else {
