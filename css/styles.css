@@ -196,16 +196,7 @@ body {
     object-fit: cover;
 }
 
-/* Estilos para el formulario de contacto */
-#contactForm .form-control {
-    border-radius: 5px;
-    border: 1px solid var(--dark-color);
-}
-
-#contactForm .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(231, 111, 81, 0.3);
-}
+/* Estilos para el formulario de contacto */eliminado
 
 /* Media Queries para responsividad */
 @media (max-width: 576px) {
