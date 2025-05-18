@@ -78,24 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact form validation
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('contactName').value.trim();
-            const email = document.getElementById('contactEmail').value.trim();
-            const message = document.getElementById('contactMessage').value.trim();
-
-            if (name && email && message) {
-                alert('Formulario enviado con éxito. Gracias por contactarnos.');
-                contactForm.reset();
-            } else {
-                alert('Por favor, completa todos los campos.');
-            }
-        });
-    }
-
+    // Contact form validation// eliminado
+    
     // Handle page load with hash
     const hash = window.location.hash.substring(1);
     if (hash) {
