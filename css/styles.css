@@ -16,6 +16,21 @@ html {
     --accent-color: #e9c46a;
     --dark-color: #264653;
     --light-color: #f4f1de;
+     /*tema de la pagina*/
+    --bg-color: #e7e2e2;
+    --text-color: #212529;
+    --card-bg: #f8f9fa;
+    --primary-color: #c97c09;
+    --footer-bg: #172a31;
+    --footer-text: #ffffff;
+    }
+    [data-theme="dark"] {
+    --bg-color: #292828;
+    --text-color: #f1f1f1;
+    --card-bg: #363434;
+    --primary-color: #bb86fc;
+    --footer-bg: #363434;
+    --footer-text: #e0e0e0;
 }
 
 body {
@@ -43,12 +58,20 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(38, 70, 83, 0.7), rgba(38, 70, 83, 0.7)), url('../assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(150, 71, 59, 0.7), rgba(25, 72, 133, 0.7)), url('../assets/images/PaginaPrincipal/PaginalPrincipalClaro.webp');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 120px 0;
     text-align: center;
+}
+
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(rgba(48, 15, 15, 0.65), rgba(6, 2, 44, 0.65)),
+                url('../assets/images/PaginaPrincipal/PaginalPrincipalClaro.webp') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    color: rgb(226, 159, 240);
 }
 
 .hero-section h1 {
@@ -74,16 +97,34 @@ body {
 .btn-outline-primary:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .feature-box {
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(240, 142, 253, 0.1);
     margin-bottom: 30px;
     transition: transform 0.3s ease;
 }
+
+/* Color de fondo para las feature-box en tema claro */
+.feature-box {
+    background-color: #e4e4e4; /* color claro para tema claro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(175, 2, 255, 0.479);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Color de fondo para las feature-box en tema oscuro */
+[data-theme="dark"] .feature-box {
+    background-color: #363434;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
 
 .feature-box:hover {
     transform: translateY(-5px);
@@ -134,6 +175,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     margin-bottom: 30px;
+    
 }
 
 .product-card:hover {
@@ -143,6 +185,16 @@ body {
 .product-card img {
     transition: opacity 0.3s ease;
 }
+
+/*FORMATO DE LAS IMAGENES DE PRODUCTOS DESTACADOS */
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    object-position: center;
+}
+
 
 .footer {
     background-color: var(--dark-color);
@@ -187,8 +239,22 @@ body {
 .nav-pills .nav-link.active,
 .nav-pills .nav-link:hover {
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(255, 255, 255);
 }
+
+[data-theme="dark"] .nav-pills .nav-link {
+    background-color: #363434;
+    color: #f1f1f1;
+    border: 1px solid #c8b0cf;
+}
+
+[data-theme="dark"] .nav-pills .nav-link.active,
+[data-theme="dark"] .nav-pills .nav-link:hover {
+    background-color: #c293fa;
+    color: #ffffff;
+    border-color: #bb86fc;
+}
+
 
 /* Estilos para el modal de producto */
 .product-modal-img {
@@ -213,4 +279,720 @@ body {
     .hero-section h1 {
         font-size: 4.5rem;
     }
+}
+/*tema de la pagina*/
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.btn-primary, .btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.section-title {
+  color: var(--text-color);
+}
+
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+.footer a {
+  color: var(--footer-text);
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+hr {
+  background-color: var(--footer-text);
+}
+/* Estilo para el login en tema oscuro */
+[data-theme="dark"] #loginPanel {
+  background-color: #1e1e1e; /* Gris oscuro pero no negro */
+  color: var(--text-color);
+}
+
+/* Inputs del login */
+[data-theme="dark"] #loginPanel input {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+[data-theme="dark"] #loginPanel input::placeholder {
+  color: #aaa;
+}
+
+/* Botones del login */
+[data-theme="dark"] #loginPanel button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] #loginPanel button:hover {
+  background-color: #d56344;
+}
+
+/* Botones de Detalles de productos */
+[data-theme="dark"] .modal-content {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-body {
+  border-color: #333;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: #d56344;
+}
+
+
+/*ESTILOS DE FILTROS*/
+.filtro-container {
+    background-color: #f9f9f9;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.filtro-container h4 {
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.filtro-container label {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: var(--primary-color);
+}
+
+#precioValor {
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-top: 5px;
+}
+
+/* Estilos para el filtro desplegable */
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    z-index: 1001;
+    float: right; /* Mueve el filtro a la derecha */
+}
+
+.filter-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #d56344;
+}
+
+.filter-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.filter-btn.active i {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0 8px 16px rgb(133, 85, 146);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 15px;
+    margin-top: 5px;
+    top: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.filter-dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section h6 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #5c5858;
+}
+
+.filter-option {
+    display: block;
+    padding: 5px 0;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-option:hover {
+    color: var(--primary-color);
+}
+
+.filter-option input {
+    margin-right: 8px;
+}
+
+.price-range {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.price-value {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--dark-color);
+}
+
+[data-theme="dark"] .filter-dropdown-content {
+    background-color: #2a2a2a;
+    color: #c2bcbc;
+    border: 1px solid #500966;
+    box-shadow: 0 8px 16px rgba(204, 187, 187, 0.1);
+}
+
+[data-theme="dark"] .filter-section h6 {
+    color: #c9c5c5;
+    border-bottom: 1px solid #636161;
+}
+
+[data-theme="dark"] .filter-option {
+    color: #c9c7c7;
+}
+
+[data-theme="dark"] .filter-option input {
+    accent-color: #bb86fc; /* Color del checkbox en tema oscuro */
+}
+
+[data-theme="dark"] .price-value {
+    color: #b9b7b7;
+}
+
+[data-theme="dark"] .btn-outline-secondary {
+    color: #c5c5c5;
+    border-color: #b8b5b5;
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+    background-color: #2e2b2b;
+    border-color: #ccc;
+    color: #fff;
+}
+
+[data-theme="dark"] .price-range::-webkit-slider-thumb {
+    background-color: #bb86fc;
+}
+
+[data-theme="dark"] .price-range {
+    background-color: #444;
+}
+
+
+/* Estilo para productos en oferta */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+/* Resaltar productos encontrados */
+.product-card.highlight {
+    box-shadow: 0 0 0 4px var(--accent-color);
+}
+
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 rgba(196, 143, 12, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(233, 196, 106, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(233, 196, 106, 0); }
+}
+
+/* Estilos responsivos para el filtro */
+@media (max-width: 768px) {
+    .filter-dropdown {
+        float: none;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .filter-dropdown-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 400px;
+        max-height: 80vh;
+    }
+    
+    .filter-btn {
+        width: auto;
+        justify-content: center;
+    }
+    
+    .search-container input[type="text"] {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/*ESTILOS PARA FORMULARIO DE RESEÑAS*/
+        .review-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .review-form h4 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .rating-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .rating-input label {
+            margin-right: 15px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .rating-stars {
+            display: flex;
+            direction: rtl;
+        }
+        
+        .rating-stars input {
+            display: none;
+        }
+        
+        .rating-stars label {
+            color: #7a7979;
+            font-size: 1.5rem;
+            padding: 0 3px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .rating-stars input:checked ~ label,
+        .rating-stars label:hover,
+        .rating-stars label:hover ~ label {
+            color: #ffc107;
+        }
+        
+        .rating-stars input:checked + label {
+            color: #ffc107;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn-submit-review {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit-review:hover {
+            background-color: #d56344;
+        }
+        
+        .review-success {
+            background-color: #1f3b26;
+            color: #3f9252;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .review-form.disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+/* Estilo del Buscador */
+.search-container input[type="text"] {
+    padding-right: 40px;
+    padding-left: 15px;
+    height: 50px;
+    font-size: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    outline: none;
+    width: 500px;
+    transition: all 0.3s ease;
+}
+.search-container button {
+    position: relative;
+    right: 40px;
+    top: 30%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.search-container button i.fas.fa-search {
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.search-container button:hover i.fas.fa-search {
+    transform: rotate(360deg);
+    color: #0051ff; /* Azul Bootstrap, podés cambiarlo */
+}
+.search-container button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+.search-container i.fas.fa-search {
+    font-size: 18px;
+}
+.search-wrapper {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin: 20px 0; /* Espaciado opcional arriba y abajo */
+}
+.mensaje-vacio {
+    margin-top: 10px;
+    text-align: center;
+    color: #d9534f;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #fcebea;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mensaje-vacio.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mensaje-vacio.icono {
+    flex-shrink: 0;
+}
+
+/*LOGIN de la pagina*/
+/* Panel lateral */
+#loginPanel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 30px 20px;
+  transition: right 0.3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+#loginPanel.open {
+  right: 0;
+}
+
+#loginPanel .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--bs-body-color);
+  cursor: pointer;
+}
+
+/* Overlay oscuro que respeta el tema */
+#loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--bs-dark-rgb), 0.6); /* en modo oscuro será oscuro */
+  backdrop-filter: blur(3px);
+  display: none;
+  z-index: 9998;
+}
+
+#loginOverlay.active {
+  display: block;
+}
+
+/*botones "ver detalles" "agregar al carrito"*/
+.product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.product-card .card-body .d-flex {
+    margin-top: auto;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-card .btn {
+    flex: 1 1 48%;
+    min-width: 120px;
+    text-align: center;
+}
+/*boton de "ver detalles"*/
+/* Estilo del modal para modo oscuro */
+[data-theme="dark"] .modal-content {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-body,
+[data-theme="dark"] .modal-footer {
+  border-color: #ffffff;
+}
+
+[data-theme="dark"] .btn-close {
+  filter: invert(1);
+}
+
+/*reseñas*/
+#reviewsList div {
+  background-color: #474747;
+}
+.btn-dejar-resena {
+  color: #c15436;
+  border: 1px solid #ff3700;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-dejar-resena:hover {
+  background-color: #d98169;
+  color: #fff;
+  border-color: #d56344;
+}
+
+.btn-dejar-resena:active {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.btn-dejar-resena:disabled {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+/*AJUSTES PARA MODO OSCURO EN EL MODAL DE RESEÑAS*/
+
+/* Recuadro de reseña */
+[data-theme="dark"] .border.bg-light {
+  background-color: #363434 !important;
+  color: #d6caca;
+}
+
+/* Texto suave en modo oscuro */
+[data-theme="dark"] .text-muted {
+  color: #ffffff !important;
+}
+
+/* Inputs del modal */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+  background-color: #363434;
+  color: #ffffff;
+  border: 1px solid #666;
+}
+
+/* Placeholder en inputs */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #ffffff;
+}
+
+/* Botón de éxito */
+[data-theme="dark"] .review-success {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+/* Tema oscuro para formularios de reseñas */
+[data-theme="dark"] .review-form {
+    background-color: #363434;
+    color: #f1f1f1;
+}
+
+[data-theme="dark"] .review-form input,
+[data-theme="dark"] .review-form textarea {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+[data-theme="dark"] .review-form input::placeholder,
+[data-theme="dark"] .review-form textarea::placeholder {
+    color: #bbb;
+}
+
+[data-theme="dark"] .review-form .btn-submit-review {
+    background-color: #c39cf6;
+    color: #000;
+}
+
+[data-theme="dark"] .review-form .btn-submit-review:hover {
+    background-color: #b38be6;
+}
+
+/* Tema oscuro para reseñas ya publicadas */
+[data-theme="dark"] .reviews-list .border {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #555;
+}
+
+/* Tema oscuro para el buscador */
+[data-theme="dark"] .search-container input[type="text"] {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border: 1px solid #a5a4a4;
+}
+
+[data-theme="dark"] .search-container input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+/* Cambiar color de la lupa en modo oscuro */
+[data-theme="dark"] .search-container button i.fas.fa-search {
+    color: #ca80e7;
+
+}
+
+/*carrito*/
+[data-theme="dark"] .list-group-item {
+    background-color: #302f2f; /* Fondo oscuro */
+    color: #f1f1f1;            /* Texto claro */
+    border-color: #9c9696;        /* Borde sutil */
 }
