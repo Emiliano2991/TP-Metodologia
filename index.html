@@ -7,8 +7,10 @@
     <meta name="keywords" content="artesanías mexicanas, alebrijes, textiles, cerámica, joyería, comercio justo">
     <meta property="og:title" content="ArtesaMex - Artesanías Mexicanas">
     <meta property="og:description" content="Explora la belleza del arte mexicano con nuestras piezas artesanales únicas.">
-    <meta property="og:image" content="assets/images/hero-bg.jpg">
+    <meta property="og:image" content="assets/images/hero-bg.webp">
     <meta property="og:url" content="https://artesamex.com">
+     <!--tema de La pagina-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>ArtesaMex - Artesanías Mexicanas</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +31,11 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home-page" aria-current="page">Inicio</a>
+                    <!--LOGIN de la pagina-->
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="toggleLoginPanel()">Login</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#about-page">Acerca de</a>
                     </li>
@@ -52,6 +58,7 @@
                         <p class="lead mb-5">Descubre la belleza y tradición del arte mexicano con nuestras piezas artesanales hechas a mano por artesanos locales.</p>
                         <a href="#products-page" class="btn btn-primary btn-lg me-2">Ver Productos</a>
                         <a href="#about-page" class="btn btn-outline-light btn-lg">Conócenos</a>
+
                     </div>
                 </div>
             </div>
@@ -87,24 +94,15 @@
             </div>
         </section>
 
-        <!-- Featured Products Preview -->
-        <section class="py-5 bg-light">
+         <!-- Featured Products Preview -->
+        <section class="py-5 theme-bg"> <!--bg-ligth de modifico por theme-bg-->
             <div class="container">
                 <h2 class="section-title text-center mb-5">Productos Destacados</h2>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card product-card">
-                            <img src="assets/images/alebrije.jpg" class="card-img-top" alt="Alebrije multicolor tallado en madera" loading="lazy">
-                            <div class="card-body">
-                                <h5 class="card-title">Alebrijes</h5>
-                                <p class="card-text">Figuras talladas en madera y pintadas a mano con colores vibrantes y diseños únicos.</p>
-                                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="1">Ver detalles</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card product-card">
-                            <img src="assets/images/textil.jpg" class="card-img-top" alt="Textil tejido a mano" loading="lazy">
+                            <!--IMAGEN AGREGADA-->
+                            <img src="assets/images/ProductosDestacados/Textil.webp" class="card-img-top" alt="Textil tejido a mano" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Textiles</h5>
                                 <p class="card-text">Tejidos a mano con técnicas ancestrales y patrones tradicionales de diversas regiones.</p>
@@ -112,9 +110,23 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="card product-card">
-                            <img src="assets/images/ceramica.jpg" class="card-img-top" alt="Cerámica decorativa" loading="lazy">
+                            <!--IMAGEN AGREGADA-->
+                            <img src="assets/images/ProductosDestacados/Alebrije.webp" class="card-img-top" alt="Alebrije multicolor tallado en madera" loading="lazy">
+                            <div class="card-body">
+                                <h5 class="card-title">Alebrijes</h5>
+                                <p class="card-text">Figuras talladas en madera y pintadas a mano con colores vibrantes y diseños únicos.</p>
+                                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="1">Ver detalles</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4">
+                        <div class="card product-card">
+                            <!--IMAGEN agregada-->
+                            <img src="assets/images/ProductosDestacados/Ceramica decorativa.webp" class="card-img-top" alt="Cerámica decorativa" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Cerámica</h5>
                                 <p class="card-text">Piezas de barro modeladas y decoradas siguiendo tradiciones centenarias.</p>
@@ -141,7 +153,8 @@
                     <p>Cada pieza que ofrecemos cuenta una historia única, transmitiendo la cultura, tradiciones y el espíritu creativo de México a través de las manos expertas de nuestros artesanos.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/images/history.jpg" alt="Artesanos trabajando en taller" class="img-fluid rounded" loading="lazy">
+                    <!--IMAGEN AGREGADA-->
+                    <img src="assets/images/NuestraHistoria/Nuestra Historia.webp" alt="Artesanos trabajando en taller" alt="Nuestra Historia" class="img-fluid rounded">
                 </div>
             </div>
             <div class="row align-items-center mb-5 flex-lg-row-reverse">
@@ -157,183 +170,586 @@
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/images/mission.jpg" alt="Comunidad artesanal" class="img-fluid rounded" loading="lazy">
+                    <!--FALTA IMAGEN-->
+                    <img src="assets/images/NuestraMision/Nuestra-Mision.webp" alt="Comunidad artesanal" class="img-fluid rounded" loading="lazy">
                 </div>
             </div>
+
+            <!--imagenes del equipo-->
             <h3 class="text-center mb-4">Nuestro Equipo</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="team-member">
-                        <img src="assets/images/team1.jpg" alt="María Fernández, Fundadora" loading="lazy">
-                        <h4 class="mt-3">María Fernández</h4>
-                        <p class="text-muted">Fundadora y Directora</p>
-                    </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Cinthia.webp" alt="Equipo 1">
+                    <h4 class="mt-3">Cinthia Araujo</h4>
+                    <p class="text-muted">Fundadora y Directora</p>
+                    <p class="text-muted">Gestión general y visión del proyecto</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-member">
-                        <img src="assets/images/team2.jpg" alt="Carlos Ramírez, Coordinador" loading="lazy">
-                        <h4 class="mt-3">Carlos Ramírez</h4>
-                        <p class="text-muted">Coordinador de Artesanos</p>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Emiliano.webp" alt="Equipo 2">
+                    <h4 class="mt-3">Emiliano Lombardo</h4>
+                    <p class="text-muted">Community Manager</p>
+                    <p class="text-muted">Contenido y comunicación en redes</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-member">
-                        <img src="assets/images/team3.jpg" alt="Laura Gómez, Diseñadora" loading="lazy">
-                        <h4 class="mt-3">Laura Gómez</h4>
-                        <p class="text-muted">Diseñadora</p>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Cami.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Camila Romero</h4>
+                    <p class="text-muted">Diseñadora</p>
+                     <p class="text-muted">Imagen visual y diseño de catálogo</p>
+                </div>
+           </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Neida.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Neida Medina</h4>
+                    <p class="text-muted">Coordinadora de Artesanos</p>
+                    <p class="text-muted">Vínculo con talleres y productores locales</p>
+                </div>
+            </div>  
+             <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Victoria.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Victoria Mendoza</h4>
+                    <p class="text-muted">Artesana</p>
+                    <p class="text-muted">Especialista en cerámica tradicional</p>
+                </div>
+            </div>
+                 <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Wilson.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Wilson Sanchez</h4>
+                    <p class="text-muted">Encargado de Ventas</p>
+                    <p class="text-muted">Atención al cliente y comercialización</p>
+                </div>
+            </div> 
+             <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Fede.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Federico Chavez</h4>
+                    <p class="text-muted">Encargado de Logística</p>
+                    <p class="text-muted">Organización de envíos y embalaje seguro</p>
+                </div>
+            </div>  
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Nico.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Nicolas Barrientos</h4>
+                    <p class="text-muted">Responsable del Almacén</p>
+                    <p class="text-muted">Control y cuidado de las piezas artesanales</p>
+                </div>
+            </div> 
+             <div class="col-md-4">
+                <div class="team-member">
+                    <img src="assets/images/Equipo/Miriam.webp" alt="Equipo 3">
+                    <h4 class="mt-3">Miriam Silva Meza</h4>
+                    <p class="text-muted">Diseñadora de Productos</p>
+                    <p class="text-muted">Diseños inspirados en la cultura mexicana</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- PRODUCTS PAGE -->
-    <div id="products-page" class="py-5 bg-light">
+    <div id="products-page" class="py-5 theme-bg"> <!--bg-ligth de modifico por theme-bg-->
         <div class="container">
             <h2 class="section-title mb-5">Nuestros Productos</h2>
+            
+            <!-- BUSCADOR -->
+            <div class="search-wrapper">
+                <div class="search-container">
+                  <input type="text" id="busqueda" oninput="buscar()" placeholder="Buscar producto...">
+                  <button onclick="buscar()">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            <!-- Mensaje-->
+            <div id="mensaje-vacio" style="display: none;" class="mensaje-vacio d-flex flex-column align-items-center justify-content-center my-4">
+                
+                <span class="fw-semibold text-danger">Producto no encontrado</span>
+            </div>
+
             <!-- Product Categories -->
-            <ul class="nav nav-pills mb-4 justify-content-center" id="productCategories">
-                <li class="nav-item">
-                    <button class="nav-link active" data-category="all">Todos</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-category="wood">Madera</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-category="textile">Textiles</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-category="ceramic">Cerámica</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-category="jewelry">Joyería</button>
-                </li>
-            </ul>
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="productCategories">
+            <li class="nav-item">
+                <button class="nav-link active" data-category="all">Todos</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-category="alebrijes">Madera</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-category="textiles">Textiles</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-category="ceramica">Cerámica</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-category="joyeria">Joyería</button>
+            </li>
+        </ul>
+
+            <!-- Botón y Carrito -->
+              <div class="text-end mb-3">
+                <button class="btn btn-outline-primary" id="toggle-cart">
+                    🛒 Carrito <span class="badge bg-secondary" id="cart-count">0</span>
+                </button>
+            </div>
+            <div id="cart-container" class="card mb-4" style="display: none;">
+                <div class="card-body">
+                    <h5 class="card-title">Carrito de Compras</h5>
+                    <ul id="cart-items" class="list-group mb-3"></ul>
+                    <strong>Total: $<span id="cart-total">0</span></strong>
+                    <div class="mt-3 d-flex justify-content-between">
+                        <button class="btn btn-sm btn-danger" id="clear-cart">Vaciar</button>
+                        <button class="btn btn-sm btn-success" id="checkout">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FILTROS DE PRODUCTOS (NUEVA SECCIÓN) -->
+            <div class="d-flex justify-content-end mb-5"> <!-- Cambiado a justify-content-end -->
+                <div class="filter-dropdown">
+                    <button class="filter-btn" onclick="toggleFilter()">
+                        Filtrar <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-content" id="filterDropdown">
+                        <div class="filter-section">
+                            <h6>Categorías</h6>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="alebrijes" checked> Madera
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="textiles" checked> Textiles
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="ceramica" checked> Cerámica
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="joyeria" checked> Joyería
+                            </label>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h6>Precio</h6>
+                            <input type="range" class="price-range" min="0" max="5000" value="5000" id="priceRange">
+                            <div class="price-value">Hasta $<span id="priceValue">5000</span></div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h6>Ofertas</h6>
+                            <label class="filter-option">
+                                <input type="checkbox" name="sale" value="true"> Mostrar solo productos en oferta
+                            </label>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-outline-secondary" onclick="resetFilters()">Restablecer</button>
+                            <button class="btn btn-sm btn-primary" onclick="applyFilters()">Aplicar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Products Grid -->
             <div class="row" id="productsGrid">
                 <!-- Product 1 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="wood">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="alebrijes" data-price="850" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/alebrije.jpg" class="card-img-top" alt="Alebrije multicolor" loading="lazy">
+                        <!--IMAGEN AGREGADA-->
+                        <img src="assets/images/Productos/Alebrijes.webp" class="card-img-top" alt="Alebrije multicolor" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Alebrije Multicolor</h5>
                             <p class="text-muted">Madera</p>
                             <p class="card-text">Figura tallada y pintada a mano con diseños únicos y colores vibrantes.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h5 mb-0">$850</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="1">Ver detalles</button>
+                                <!--boton de categoria-->
+                               <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal"
+                                data-product-id="1">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Alebrije Multicolor" data-price="850">
+                                    Agregar al carrito</button>
                             </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="1">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p1-star5" name="rating-1" value="5"><label for="p1-star5">★</label>
+                                <input type="radio" id="p1-star4" name="rating-1" value="4"><label for="p1-star4">★</label>
+                                <input type="radio" id="p1-star3" name="rating-1" value="3"><label for="p1-star3">★</label>
+                                <input type="radio" id="p1-star2" name="rating-1" value="2"><label for="p1-star2">★</label>
+                                <input type="radio" id="p1-star1" name="rating-1" value="1"><label for="p1-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="textile">
+                 <div class="col-md-4 col-lg-3 mb-4 producto" data-category="textiles" data-price="1200" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/rebozo.jpg" class="card-img-top" alt="Rebozo tradicional" loading="lazy">
+                        <!--IMAGEN AGREGADA-->
+                        <img src="assets/images/Productos/Prendas de rebozo.webp" class="card-img-top" alt="Rebozo tradicional" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Rebozo Tradicional</h5>
                             <p class="text-muted">Textiles</p>
                             <p class="card-text">Tejido a mano en telar con técnicas ancestrales y tintes naturales.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">$1,200</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="2">Ver detalles</button>
+                               <span class="h5 mb-0">$1,200</span>
+                               <!--boton de categoria-->
+                               <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal"
+                                data-product-id="2">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Rebozo Tradicional" data-price="1200">
+                                    Agregar al carrito
+                            </button>
                             </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="2">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p2-star5" name="rating-2" value="5"><label for="p2-star5">★</label>
+                                <input type="radio" id="p2-star4" name="rating-2" value="4"><label for="p2-star4">★</label>
+                                <input type="radio" id="p2-star3" name="rating-2" value="3"><label for="p2-star3">★</label>
+                                <input type="radio" id="p2-star2" name="rating-2" value="2"><label for="p2-star2">★</label>
+                                <input type="radio" id="p2-star1" name="rating-2" value="1"><label for="p2-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <!-- Product 3 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="ceramic">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="ceramica" data-price="650" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/talavera.jpg" class="card-img-top" alt="Talavera decorativa" loading="lazy">
+                        <!--IMAGEN AGREGADA-->
+                        <img src="assets/images/Productos/Ceramica de Talavera.webp" class="card-img-top" alt="Talavera decorativa" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Talavera Decorativa</h5>
                             <p class="text-muted">Cerámica</p>
                             <p class="card-text">Pieza de cerámica pintada a mano con diseños tradicionales de Puebla.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h5 mb-0">$650</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="3">Ver detalles</button>
+                                <!--boton de categoria-->
+                                <button class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModal"
+                                    data-product-id="3">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Talavera Decorativa" data-price="650">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="3">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p3-star5" name="rating-2" value="5"><label for="p3-star5">★</label>
+                                <input type="radio" id="p3-star4" name="rating-2" value="4"><label for="p3-star4">★</label>
+                                <input type="radio" id="p3-star3" name="rating-2" value="3"><label for="p3-star3">★</label>
+                                <input type="radio" id="p3-star2" name="rating-2" value="2"><label for="p3-star2">★</label>
+                                <input type="radio" id="p3-star1" name="rating-2" value="1"><label for="p3-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Product 4 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="jewelry">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="joyeria" data-price="1500" data-sale="true">
                     <div class="card product-card">
-                        <img src="assets/images/collar.jpg" class="card-img-top" alt="Collar de plata" loading="lazy">
+                        <span class="sale-badge">OFERTA</span>
+                        <!--FALTA IMAGEN-->
+                        <img src="assets/images/Productos/Collar de plata.webp" class="card-img-top" alt="Collar de plata" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Collar de Plata</h5>
                             <p class="text-muted">Joyería</p>
                             <p class="card-text">Joyería fina de plata trabajada a mano por artesanos de Taxco.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">$1,500</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="4">Ver detalles</button>
+                                <div>
+                                    <span class="h5 mb-0">$1,200</span>
+                                    <span class="original-price">$1,500</span>
+                                </div>
+                            <!--boton de categoria-->
+                            <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal"
+                                data-product-id="4">Ver detalles</button>
+                            <!-- Botón y Carrito -->
+                            <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                data-name="Collar de Plata" data-price="1200">
+                                Agregar al carrito
+                            </button>
+                            </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="4">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p4-star5" name="rating-2" value="5"><label for="p4-star5">★</label>
+                                <input type="radio" id="p4-star4" name="rating-2" value="4"><label for="p4-star4">★</label>
+                                <input type="radio" id="p4-star3" name="rating-2" value="3"><label for="p4-star3">★</label>
+                                <input type="radio" id="p4-star2" name="rating-2" value="2"><label for="p4-star2">★</label>
+                                <input type="radio" id="p4-star1" name="rating-2" value="1"><label for="p4-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Product 5 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="wood">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="alebrijes" data-price="950" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/mascara.jpg" class="card-img-top" alt="Máscara ceremonial" loading="lazy">
+                        <!--FALTA IMAGEN-->
+                        <img src="assets/images/Productos/Mascara Ceremonial.webp" class="card-img-top" alt="Máscara ceremonial" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Máscara Ceremonial</h5>
                             <p class="text-muted">Madera</p>
                             <p class="card-text">Máscara tallada en madera inspirada en tradiciones prehispánicas.</p>
-                            < Garrett> <div class="d-flex justify-content-between align-items-center">
+                            <!--ARREGLO DE ETIQUETA MAL CERRADA <Garett>-->
+                            <div class="d-flex justify-content-between align-items-center">
                                 <span class="h5 mb-0">$950</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="5">Ver detalles</button>
+                                <!--boton de categoria-->
+                                <button class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModal"
+                                    data-product-id="5">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Máscara Ceremonial" data-price="950">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="5">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p5-star5" name="rating-2" value="5"><label for="p5-star5">★</label>
+                                <input type="radio" id="p5-star4" name="rating-2" value="4"><label for="p5-star4">★</label>
+                                <input type="radio" id="p5-star3" name="rating-2" value="3"><label for="p5-star3">★</label>
+                                <input type="radio" id="p5-star2" name="rating-2" value="2"><label for="p5-star2">★</label>
+                                <input type="radio" id="p5-star1" name="rating-2" value="1"><label for="p5-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Product 6 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="textile">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="textiles" data-price="1800" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/huipil.jpg" class="card-img-top" alt="Huipil bordado" loading="lazy">
+                        <!--FALTA IMAGEN-->
+                        <img src="assets/images/Productos/Huipil bordado.webp" class="card-img-top" alt="Huipil bordado" loading="lazy">
                         <div class="card-body">
                             <h5 class="card-title">Huipil Bordado</h5>
                             <p class="text-muted">Textiles</p>
                             <p class="card-text">Prenda tradicional con bordados a mano de Chiapas.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h5 mb-0">$1,800</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="6">Ver detalles</button>
+                                <!--boton de categoria-->
+                                <button class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModal"
+                                    data-product-id="6">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Huipil Bordado" data-price="1800">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="6">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p6-star5" name="rating-2" value="5"><label for="p6-star5">★</label>
+                                <input type="radio" id="p6-star4" name="rating-2" value="4"><label for="p6-star4">★</label>
+                                <input type="radio" id="p6-star3" name="rating-2" value="3"><label for="p6-star3">★</label>
+                                <input type="radio" id="p6-star2" name="rating-2" value="2"><label for="p6-star2">★</label>
+                                <input type="radio" id="p6-star1" name="rating-2" value="1"><label for="p6-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Product 7 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="ceramic">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="ceramica" data-price="1100" data-sale="false">
                     <div class="card product-card">
-                        <img src="assets/images/arbol.jpg" class="card-img-top" alt="Árbol de la vida" loading="lazy">
+                        <!--FALTA IMAGEN-->
+                        <img src="assets/images/Productos/Arbol de la vida.webp" class="card-img-top" alt="Árbol de la vida" loading="lazy">
                         <div class="card-body">
-                            <h5 class="card-title">Árbol de la Vida</h5>
+                            <h5 class="card-title">Arbol de la Vida</h5>
                             <p class="text-muted">Cerámica</p>
                             <p class="card-text">Pieza decorativa elaborada y pintada a mano en Metepec.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h5 mb-0">$1,100</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="7">Ver detalles</button>
+                                <!--boton de categoria-->
+                                <button class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModal"
+                                    data-product-id="7">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Árbol de la Vida" data-price="1100">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="7">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p7-star5" name="rating-2" value="5"><label for="p7-star5">★</label>
+                                <input type="radio" id="p7-star4" name="rating-2" value="4"><label for="p7-star4">★</label>
+                                <input type="radio" id="p7-star3" name="rating-2" value="3"><label for="p7-star3">★</label>
+                                <input type="radio" id="p7-star2" name="rating-2" value="2"><label for="p7-star2">★</label>
+                                <input type="radio" id="p7-star1" name="rating-2" value="1"><label for="p7-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Product 8 -->
-                <div class="col-md-4 col-lg-3 product-item" data-category="jewelry">
+                <div class="col-md-4 col-lg-3 mb-4 producto" data-category="joyeria" data-price="780" data-sale="true">
                     <div class="card product-card">
-                        <img src="assets/images/aretes.jpg" class="card-img-top" alt="Aretes de ámbar" loading="lazy">
+                        <span class="sale-badge">OFERTA</span>
+                        <!--FALTA IMAGEN-->
+                        <img src="assets/images/Productos/Aretes de ambar.webp" class="card-img-top" alt="Aretes de ámbar" loading="lazy">
                         <div class="card-body">
-                            <h5 class="card-title">Aretes de Ámbar</h5>
+                            <h5 class="card-title">Aretes de Ambar</h5>
                             <p class="text-muted">Joyería</p>
                             <p class="card-text">Aretes de plata con ámbar natural de Chiapas montado a mano.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">$780</span>
-                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" data-product-id="8">Ver detalles</button>
+                                <div>
+                                    <span class="h5 mb-0">$624</span>
+                                    <span class="original-price">$780</span>
+                                </div>
+                                <!--boton de categoria-->
+                               <button class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModal"
+                                    data-product-id="8">Ver detalles</button>
+                                <!-- Botón y Carrito -->
+                                <!--CORRECCION DE ERROR DE BOTON-->
+                                <button class="btn btn-sm btn-outline-success add-to-cart" 
+                                    data-name="Aretes de Ámbar" data-price="624">
+                                    Agregar al carrito
+                                </button>
+                               </div>
+                            <!-- SECCIÓN DE RESEÑAS PARA CADA PRODUCTO -->
+                            <!-- BOTÓN PARA MOSTRAR FORMULARIO -->
+                            <button class="btn btn-sm btn-dejar-resena mt-2" onclick="toggleReviewForm(this)">Deja tu reseña</button>
+ 
+                            <!-- FORMULARIO DE RESEÑAS OCULTO -->
+                            <div class="review-form p-3 mt-2 d-none" data-product-id="8">
+                            <h6>Deja tu reseña</h6>
+                            <form class="individual-review-form">
+                                <input type="text" class="form-control mb-2 review-user" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="p8-star5" name="rating-2" value="5"><label for="p8-star5">★</label>
+                                <input type="radio" id="p8-star4" name="rating-2" value="4"><label for="p8-star4">★</label>
+                                <input type="radio" id="p8-star3" name="rating-2" value="3"><label for="p8-star3">★</label>
+                                <input type="radio" id="p8-star2" name="rating-2" value="2"><label for="p8-star2">★</label>
+                                <input type="radio" id="p8-star1" name="rating-2" value="1"><label for="p8-star1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2 review-comment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
+                                <div class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            <div class="reviews-list mt-3"></div>
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><!-- Fin de fila de productos -->
         </div>
     </div>
+
+    
 
     <!-- Product Modal -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -353,7 +769,32 @@
                             <p class="text-muted" id="modalProductCategory"></p>
                             <p id="modalProductDescription"></p>
                             <p class="h5" id="modalProductPrice"></p>
-                            <button class="btn btn-primary mt-3">Agregar al Carrito</button>
+                             <!--MODIFICACION del botón del modal "Agregar al carrito" para que tenga la clase y atributos correctos-->
+                            <button id="modalAddToCart" class="btn btn-primary mt-3 add-to-cart"
+                                data-name=""
+                                data-price="">
+                                Agregar al carrito
+                            </button>
+                            <hr>
+                            <div id="modalReviewSection" class="mt-4">
+                            <h5>Reseñas</h5>
+                            <div id="modalReviewsList" class="mb-3"></div>
+
+                            <form id="modalReviewForm">
+                                <input type="text" class="form-control mb-2" id="modalReviewUser" placeholder="Tu nombre" required>
+                                <div class="rating-stars mb-2">
+                                <input type="radio" id="modalStar5" name="modalRating" value="5"><label for="modalStar5">★</label>
+                                <input type="radio" id="modalStar4" name="modalRating" value="4"><label for="modalStar4">★</label>
+                                <input type="radio" id="modalStar3" name="modalRating" value="3"><label for="modalStar3">★</label>
+                                <input type="radio" id="modalStar2" name="modalRating" value="2"><label for="modalStar2">★</label>
+                                <input type="radio" id="modalStar1" name="modalRating" value="1"><label for="modalStar1">★</label>
+                                </div>
+                                <textarea class="form-control mb-2" id="modalReviewComment" placeholder="Tu comentario" required></textarea>
+                                <button type="submit" class="btn btn-sm btn-primary">Enviar Reseña</button>
+                                <div id="modalReviewSuccess" class="review-success mt-2" style="display: none;">¡Gracias por tu reseña!</div>
+                            </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -390,17 +831,76 @@
                         <li><i class="fas fa-phone me-2"></i> (55) 1234-5678</li>
                         <li><i class="fas fa-envelope me-2"></i> contacto@artesamex.com</li>
                     </ul>
-                    
+                    <!--formulario de la pagina-->
+                    <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#footer-contact" aria-expanded="false" aria-controls="footer-contact">
+                        Formulario de contacto <span class="ms-1" id="toggle-icon">▼</span>
+                    </button>
                 </div>
             </div>
-            <hr class="mt-4 mb-4 bg-light">
+            <hr class="mt-4 mb-4 theme-bg"><!--bg-ligth de modifico por theme-bg-->
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p class="mb-0">© 2025 ArtesaMex. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
+        <!--formulario de la pagina-->
+        <section id="footer-contact" class="collapse theme-bg py-5 border-top">
+            <div class="container">
+                <h4 class="text-center mb-4">Contáctanos</h4>
+                <form id="footerContactForm" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                    <label for="footerName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="footerName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="footerEmail" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="footerEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="footerMessage" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="footerMessage" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+        </section>
     </footer>
+
+    <!--tema de la pagina-->
+    <button id="theme-toggle" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px; z-index: 9999; border-radius: 50%; width: 50px; height: 50px;">
+    <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+    <!--Para mostrar un mensaje como "Tu producto se agregó al carrito"-->
+    <div id="cart-message" class="alert alert-success" style="display: none; position: fixed; top: 20px; right: 20px; z-index: 9999;">
+    !el producto fue agregado al carrito! 🛒
+    </div>
+
+    <!-- Login de la pagina-->
+        <!-- Fondo oscuro para el panel -->
+        <div id="loginOverlay" onclick="toggleLoginPanel()"></div>
+
+        <!-- Panel lateral -->
+        <div id="loginPanel">
+        <button class="close-btn" onclick="toggleLoginPanel()">×</button>
+        <h3 class="mb-3">Iniciar Sesión / Registrarse</h3>
+
+        <!-- Registro -->
+        <form id="registerForm" class="mb-4">
+            <input type="text" id="regUsername" class="form-control mb-2" placeholder="Usuario" required>
+            <input type="password" id="regPassword" class="form-control mb-2" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-warning w-100">Registrarse</button>
+        </form>
+
+        <!-- Login -->
+        <form id="loginForm">
+            <input type="text" id="loginUsername" class="form-control mb-2" placeholder="Usuario" required>
+            <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-success w-100">Iniciar Sesión</button>
+        </form>
+
+        <div id="welcomeMsg" class="mt-3 text-success" style="display: none;"></div>
+        </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
